@@ -14,7 +14,7 @@
 
 ### Optical Flow Estimation
 
-#### Installation
+#### 1)Installation
 Install basic version of FlowNet2.
 ```
 cd flownet2-pytorch
@@ -23,7 +23,7 @@ bash install.sh
 ```
 download the [pre-trained model](https://drive.google.com/file/d/1hF8vS6YeHkx3j2pfCeQqqZGwA_PJq_Da/view?usp=sharing) and place it in the flownet2-pytorch directory.
 
-#### Dataset Preperation
+#### 2)Dataset Preperation
 To get optical flow estimation of each frame, the frist thing to do is extracting image of each frame.
 ```
 # run extracting script
@@ -36,7 +36,7 @@ cd ..
 # run the downsample script
 matlab -nodesktop -nosplash downSample
 ```
-#### Inference
+#### 3)Inference
 If you want to use other datasets as input, please modify your command according to the detailed instruction in the official [FlowNet2.0](https://github.com/NVIDIA/flownet2-pytorch) documentation. Following the command attached below can merely work in the given dataset.
 ```
 python3 main.py --inference --model FlowNet2 
