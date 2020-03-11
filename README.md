@@ -2,8 +2,42 @@
 ## Introduction
 
 ## System Requirements
+### FlowNet2.0 -- python 3
+* numpy
+* PyTorch
+* scipy
+* scikit-image
+* tensorboardX
+* colorama, tqdm, setproctitle
 
 ## Runing
+
+### Optical Flow Estimation
+
+#### Installation
+```
+# get flownet2-pytorch source
+git clone https://github.com/NVIDIA/flownet2-pytorch.git
+cd flownet2-pytorch
+
+# install custom layers
+bash install.sh
+
+#
+```
+
+#### Inference
+If you want to use other datasets as input, please modify your command according to the detailed instruction in the official [FlowNet2.0](https://github.com/NVIDIA/flownet2-pytorch) documentation. Following the command attached below can merely work in the given dataset.
+```
+python3 main.py --inference --model FlowNet2 
+    --save_flow \
+    --inference_dataset ImagesFromFolder \
+    --inference_dataset_root video2_re \
+    --resume FlowNet2_checkpoint.pth.tar \
+    --save result
+```
+
+### PSNR-OF Calculation and Tile Grouping
 
 ### 
 
