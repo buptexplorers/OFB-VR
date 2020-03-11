@@ -15,16 +15,13 @@
 ### Optical Flow Estimation
 
 #### Installation
+Install basic version of FlowNet2.
 ```
-# get flownet2-pytorch source
-git clone https://github.com/NVIDIA/flownet2-pytorch.git
 cd flownet2-pytorch
-
 # install custom layers
 bash install.sh
-
-#
 ```
+download the [pre-trained model](https://drive.google.com/file/d/1hF8vS6YeHkx3j2pfCeQqqZGwA_PJq_Da/view?usp=sharing) and place it in the same directory of FlowNet2 code.
 
 #### Inference
 If you want to use other datasets as input, please modify your command according to the detailed instruction in the official [FlowNet2.0](https://github.com/NVIDIA/flownet2-pytorch) documentation. Following the command attached below can merely work in the given dataset.
