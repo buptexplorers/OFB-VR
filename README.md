@@ -23,6 +23,19 @@ bash install.sh
 ```
 download the [pre-trained model](https://drive.google.com/file/d/1hF8vS6YeHkx3j2pfCeQqqZGwA_PJq_Da/view?usp=sharing) and place it in the flownet2-pytorch directory.
 
+#### Dataset Preperation
+To get optical flow estimation of each frame, the frist thing to do is extracting image of each frame.
+```
+# run extracting script
+
+```
+Since FlowNet2 can not run detection on raw images of 2880*1440 resulution, we need to downsample the input images first.
+```
+# return to OFV-VR project root
+cd ..
+# run the downsample script
+matlab -nodesktop -nosplash downSample
+```
 #### Inference
 If you want to use other datasets as input, please modify your command according to the detailed instruction in the official [FlowNet2.0](https://github.com/NVIDIA/flownet2-pytorch) documentation. Following the command attached below can merely work in the given dataset.
 ```
@@ -32,6 +45,8 @@ python3 main.py --inference --model FlowNet2
     --inference_dataset_root video2_re \
     --resume FlowNet2_checkpoint.pth.tar \
     --save result
+# move result to PSNR-OF calculation module
+mv flownet2-pytorch/result/inference/run.epoch-0-flow-field/*.flo XXXX/orgFlow/1/1/continuesFlo/
 ```
 
 ### PSNR-OF Calculation and Tile Grouping
