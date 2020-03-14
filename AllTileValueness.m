@@ -15,7 +15,8 @@ for set=Set
         % make a list of seconds that need to be processed
         mkdir(['randSecs/',num2str(set)]);
         if ~exist(['randSecs/',num2str(set),'/',num2str(vid),'.mat'],'file')
-            Sec = (3:70);
+            Sec = 20+randperm(40);
+            Sec = sort(Sec(1:10));
             save(['randSecs/',num2str(set),'/',num2str(vid),'.mat'],'Sec');
         else
             Sec = cell2mat(struct2cell(load(['randSecs/',num2str(set),'/',num2str(vid),'.mat'])));
