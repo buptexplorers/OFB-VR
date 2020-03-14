@@ -57,8 +57,11 @@ python3 main.py --inference --model FlowNet2
 mv flownet2-pytorch/result/inference/run.epoch-0-flow-field/*.flo XXXX/orgFlow/1/1/continuesFlo/
 ```
 
-### 4)PSNR-OF Calculation and Tile Grouping
-Firstly, run matlab file to calculate MSE value for all tiles according to trace of users.
+### PSNR-OF Calculation and Tile Grouping
+
+
+#### 1)Quantify Tiles
+Run matlab file to calculate JND value for all basic tiles according to static image, relative speed and velocity depth of each pixel. Combining JND with trace of users, we can get ratio value as the quantification result of the awareness of quality distortion from all tiles.
 ```
 # run calculation script
 matlab -nodesktop -nosplash AllTileValueness
@@ -70,7 +73,8 @@ Parameters in related file:
   'usernum' (calcTileMse.m Line 14; calcTileMseFlow.m Line 14) - A larger usernum leads to a more accurate calculation result, suggested range 10-48
   'frameBase' (calcTileMseFlow.m Line 15) - Change it according to the optical flow files, e.g. 20 if optical files generate from the 20th second
 
-Then run a C++ code to generate a versatile-size tiling scheme for videos.
+#### 2)Tile Grouping
+Run a C++ code to generate a versatile-size tiling scheme for videos. This process is similar to a 2-dimensions clustering.
 ```
 # run tiling script
 g++ tilingDP/main_ori.cpp -o temp
@@ -82,7 +86,8 @@ Before running, check the following parameters if they are correct.
   'filename' (Line 254) - For Pano set ‘ratio’, OFB-VR set ‘ratioF’
   'dir' (Line 358), 'outputfile' (Line 381) - For Pano set ‘tiling1004’, OFB-VR set ‘tiling1003’
 
-Lastly, combining data of users' traces and tiling schemes, run another matlab code to calculate and store data for reinforcement learning evaluation.
+#### 3)Get PSNR-OF
+Combining data of users' traces and tiling schemes, run another matlab code to calculate and store MSE value and size of tiles. These data are actually normalized PSNR-OF data and are prepared for reinforcement learning evaluation.
 ```
 matlab -nodesktop -nosplash TransToRL
 ```
@@ -94,7 +99,7 @@ Parameters in related file:
   'usernum' (calcTileMseForRL.m Line 14; calcTileMseFlowForRL.m Line 14) - A larger usernum leads to a more accurate calculation result, suggested range 10-48
   'frameBase' (calcTileMseFlowForRL.m Line 15) - Match the number in AllTileValueness.m
 
-### 5)Reinforcement Learning
+### Reinforcement Learning
 Before running, please set parameters in args.py, line 59 - 63, accordingly at first.
 ```python
         self.tile_column = 12       # change to 24 while using Pano and OFB-VR
