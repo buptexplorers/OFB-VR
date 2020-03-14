@@ -24,15 +24,13 @@ for set=Set
     for vid=Vid
         mkdir(['randSecs/',num2str(set)]);
         if ~exist(['randSecs/',num2str(set),'/',num2str(vid),'.mat'],'file')
-            Sec = (22:26);
+            Sec = 20+randperm(40);
+            Sec = sort(Sec(1:10));
             save(['randSecs/',num2str(set),'/',num2str(vid),'.mat'],'Sec');
         else
             Sec = cell2mat(struct2cell(load(['randSecs/',num2str(set),'/',num2str(vid),'.mat'])));
         end
         
-        mkdir(['PlatoResult/',num2str(nGridR),'_',num2str(nGridC),'/',num2str(set),'/',num2str(vid)]);
-        mkdir(['PanoResult/',num2str(set),'/',num2str(vid)]);
-        mkdir(['OFB_VRResult/',num2str(set),'/',num2str(vid)]);%
         for sec=11:1:70 % sec=Sec,randomly processes 10 chunks, eg.Sec=[23,26,31,36,42,50,52,54,55,60]
             try % if the length of a chunk is not 1 sec, skip to avoid error
                 secString=sprintf('%03d',sec-1);
