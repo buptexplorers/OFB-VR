@@ -68,17 +68,15 @@ Run matlab file to calculate JND value for all basic tiles according to static i
 matlab -nodesktop -nosplash AllTileValueness
 ```
 Before running, check the following parameters if they are correct.
-
+```
   'set' (Line 10), 'vid' (Line 11), 'sec' (Line 24) - Match the value in extractFrame.m mentioned in 2)
-  
   'usernum' (Line 12) - Decide how many calculation results will be stored, ranged 1-48
-  
+```
 Parameters in related file:
-
+```
   'usernum' (calcTileMse.m Line 14; calcTileMseFlow.m Line 14) - A larger usernum leads to a more accurate calculation result, suggested range 10-48
-  
   'frameBase' (calcTileMseFlow.m Line 15) - Change it according to the optical flow files, e.g. 20 if optical files generate from the 20th second
-
+```
 #### 2)Tile Grouping
 Run a C++ code to generate a versatile-size tiling scheme for videos. This process is similar to a 2-dimensions clustering.
 ```
@@ -87,34 +85,28 @@ g++ tilingDP/main_ori.cpp -o temp
 ./temp
 ```
 Before running, check the following parameters if they are correct.
-
+```
   'SumUser' (Line 19), 'set' (Line 245), 'video' (Line 247) - Match the value in AllTileValueness.m
-  
   'i' (Line 250) - Set the correct parameters according to total time in reinforcement learning, refer to frameAbs in file like ‘calcTileMse.m’ or output folder like ‘ratio’
-  
   'filename' (Line 254) - For Pano set ‘ratio’, OFB-VR set ‘ratioF’
-  
   'dir' (Line 358), 'outputfile' (Line 381) - For Pano set ‘tiling1004’, OFB-VR set ‘tiling1003’
-
+```
 #### 3)Get PSNR-OF
 Combining data of users' traces and tiling schemes, run another matlab code to calculate and store MSE value and size of tiles. These data are actually normalized PSNR-OF data and are prepared for reinforcement learning evaluation.
 ```
 matlab -nodesktop -nosplash TransToRL
 ```
 Before running, check the following parameters if they are correct.
-
+```
   'set' (Line 10), 'vid' (Line 11), 'usernum' (Line 19), 'sec' (Line 36) - Match the value in AllTileValueness.m
-  
   zeros(70,~,~) (Line 59-67), 'SecNo' (Line 70,77,84,91,98,111,117,123) - 70 match the total time in reinforcement learning
-  
+```  
 Parameters in related file:
-
+```
   'nUser' (PlatoForRL.m Line 5; PanoForRL.m Line 3; OFB_VRForRL.m Line 3) - Match the number in TransToRL.m
-  
   'usernum' (calcTileMseForRL.m Line 14; calcTileMseFlowForRL.m Line 14) - A larger usernum leads to a more accurate calculation result, suggested range 10-48
-  
   'frameBase' (calcTileMseFlowForRL.m Line 15) - Match the number in AllTileValueness.m
-
+```
 ### Reinforcement Learning
 Before running, please set parameters in args.py, line 59 - 63, accordingly at first.
 ```python
