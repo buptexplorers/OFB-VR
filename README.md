@@ -69,7 +69,7 @@ matlab -nodesktop -nosplash AllTileValueness
 ```
 Before running, check the following parameters if they are correct.
 ```
-  'set' (Line 10), 'vid' (Line 11), 'sec' (Line 24) - Match the value in extractFrame.m mentioned in 2)
+  'set' (Line 10), 'vid' (Line 11), 'sec' (Line 25) - Match the value in extractFrame.m mentioned in 2)
   'usernum' (Line 12) - Decide how many calculation results will be stored, ranged 1-48
 ```
 Parameters in related file:
