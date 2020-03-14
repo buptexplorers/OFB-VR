@@ -22,7 +22,7 @@ orgChunkPath = sprintf('videos/%d/%d/%03d.mp4',set,vid,sec-1);
 vr = VideoReader(orgChunkPath);
 
 % JND fitting function from user study
-% lumiToJND, depthToJND, speedToJND
+% lumiToJND, depthToJND, speedToJND - cfit structure
 load('fitted.mat');
 
 % get original video frame image
