@@ -1,0 +1,4 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main_ori.cpp
+  Project1.vcxproj -> E:\MATLAB\DSPexp\PanoProject-master\SIGCOMM Source Code\tilingDP\Debug\tilingDP.exe
+  Project1.vcxproj -> E:\MATLAB\DSPexp\PanoProject-master\SIGCOMM Source Code\tilingDP\Debug\tilingDP.pdb (Partial PDB)
