@@ -69,7 +69,7 @@ matlab -nodesktop -nosplash AllTileValueness
 ```
 Before running, check the following parameters if they are correct.
 ```
-  'set' (Line 10), 'vid' (Line 11), 'sec' (Line 24) - Match the value in extractFrame.m mentioned in 2)
+  'set' (Line 10), 'vid' (Line 11), 'sec' (Line 25) - Match the value in extractFrame.m mentioned in 2)
   'usernum' (Line 12) - Decide how many calculation results will be stored, ranged 1-48
 ```
 Parameters in related file:
@@ -98,8 +98,8 @@ matlab -nodesktop -nosplash TransToRL
 ```
 Before running, check the following parameters if they are correct.
 ```
-  'set' (Line 10), 'vid' (Line 11), 'usernum' (Line 19), 'sec' (Line 36) - Match the value in AllTileValueness.m
-  zeros(70,~,~) (Line 59-67), 'SecNo' (Line 70,77,84,91,98,111,117,123) - 70 match the total time in reinforcement learning
+  'set' (Line 10), 'vid' (Line 11), 'usernum' (Line 19), 'sec' (Line 34) - Match the value in AllTileValueness.m
+  zeros(70,~,~) (Line 57-65), 'SecNo' (Line 68,75,82,89,96,109,115,121) - 70 match the total time in reinforcement learning
 ```  
 Parameters in related file:
 ```
