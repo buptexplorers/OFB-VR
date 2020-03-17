@@ -10,6 +10,9 @@ This is an interactive method of VR streaming that can make use of VR users’ Q
 * scikit-image
 * tensorboardX
 * colorama, tqdm, setproctitle
+### Matlab Simulation
+* Matlab (R2015a or higher) with Parallel Computing Toolbox and Image Processing Toolbox.
+* FFMPEG (use setenv() to add ffmpeg path in MATLAB program).
 
 ## Runing
 
