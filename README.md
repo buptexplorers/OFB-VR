@@ -31,7 +31,7 @@ bash install.sh
 download the [pre-trained model](https://drive.google.com/file/d/1hF8vS6YeHkx3j2pfCeQqqZGwA_PJq_Da/view?usp=sharing) and place it in the flownet2-pytorch directory.
 
 #### 2)Dataset Preperation
-To get optical flow estimation of each frame, the frist thing to do is cutting original video into 1 second chunks and extracting image of each frame. The data of videos and viewpoint trace of users in OFB-VR can be downloaded from the [link](https://pan.baidu.com/s/1WwpwbzTMcI5OLPTo6v-_VA) with the code 'qwh7'.
+To get optical flow estimation of each frame, the frist thing to do is cutting original video into 1 second chunks and extracting image of each frame. The data of videos and viewpoint trace of users in OFB-VR can be downloaded from the [BaiduYun link](https://pan.baidu.com/s/1WwpwbzTMcI5OLPTo6v-_VA) with the code 'qwh7'.
 ```
 # run extracting script
 matlab -nodesktop -nosplash cutChunk
