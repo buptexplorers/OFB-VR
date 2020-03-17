@@ -1,4 +1,4 @@
-% Draw QoE-Bandwidth Consumption graph
+% Draw QoE-Bandwidth Consumption graph, read NotesForevaluation.txt for more help
 clear all;
 close all;
 clc;
