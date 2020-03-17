@@ -28,8 +28,6 @@ class Args:
         #self.video_size_file = '../../datasets/video_sizes/video_size_'
         self.vp_history_len = 30  # use last 30 frames' viewport to predict
         #self.predictor_path = 'adam-lstm-128-1.model'
-        self.tile_column = 12   # change to 24 while using Pano and OFB-VR
-        self.tile_row = 6       # change to 12 while using Pano and OFB-VR
         self.vp_length = 90
         self.vp_height = 75
         self.ad_length = 105
@@ -57,7 +55,12 @@ class Args:
         self.max_episode_length = 25
         self.seed = 30
 
-        self.versatile = 0
+
+        self.tile_column = 12       # change to 24 while using Pano and OFB-VR
+        self.tile_row = 6           # change to 12 while using Pano and OFB-VR
+        self.MSEfile='BSL'          #Pano       OFB
+        self.Sizefile='BSL_size'    #Pano_size  OFB_size
+        self.versatile = 0          #30         30
         self.versaTilePath = './datasets/1/'#'./XXXXXXX/tilingDP/Project1/tiling1004/1/1/'
         self.tile_size = np.zeros(72, dtype = np.int16)
 

@@ -1,5 +1,6 @@
 # OFB-VR
 ## Introduction
+This is an interactive method of VR streaming that can make use of VR users’ QoE awareness to ease the bandwidth pressure. The Just-Noticeable Difference through Optical Flow Estimation (JND-OFE) is explored to quantify users’ awareness of quality distortion in 360◦ videos. Accordingly, a novel 360◦ videos QoE metric based on PSNR and JND-OFE (PSNR-OF) is proposed. With the help of PSNR- OF, OFB-VR proposes a versatile-size tiling scheme to lessen the tiling overhead. A Reinforcement Learning(RL) method is implemented to make use of historical data to perform Adaptive BitRate(ABR). For evaluation, we take two prior VR streaming schemes, Pano and Plato, as baselines.
 
 ## System Requirements
 ### FlowNet2.0 -- python 3
@@ -9,6 +10,9 @@
 * scikit-image
 * tensorboardX
 * colorama, tqdm, setproctitle
+### Matlab Simulation
+* Matlab (R2015a or higher) with Parallel Computing Toolbox and Image Processing Toolbox.
+* FFMPEG (use setenv() to add ffmpeg path in MATLAB program).
 
 ## Runing
 
