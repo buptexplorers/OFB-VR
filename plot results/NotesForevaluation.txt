@@ -1,0 +1,9 @@
+Run evaluation.m
+This file draws the graph of QoE-Bandwidth Consumption.
+To successfully run this file, you should use addpath() to add the whole OFB-VR project to MATLAB
+
+Check the following important parameters before running:
+set (Line 10), vid (Line 11), sec (Line 43), usernum (Line 19) - Set the correct parameters according to TransToRL.m
+nUser (Plato.m Line 5; Pano.m Line 3; OFB_VR.m Line 3) - Match the number in evaluation.m
+usernum (calcTileMse.m Line 14; calcTileMseFlow.m Line 14) - A larger usernum leads to a more accurate calculation result, suggested range 10-48
+frameBase (calcTileMseFlow.m Line 15) - Change it according to the optical flow files, e.g. 20 if optical files generate from the 20th second
